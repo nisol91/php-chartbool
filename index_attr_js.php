@@ -15,14 +15,16 @@
 
     <title></title>
   </head>
-  <?php include 'data.php'; ?>
   <body>
     <div class="container">
       <div class="grafico">
-        <canvas class="line-chart"></canvas>
+        <?php include 'data.php'; ?>
+        <canvas class="line-chart" data-database="<?php echo $dataset; ?>"></canvas>
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script_attr.js">
+
+    </script>
   </body>
 </html>

@@ -1,9 +1,11 @@
 
 $(document).ready(function() {
-
-
-
-
+  var data = $('.line-chart').attr('data-database');
+  console.log(data);
+  var dataFinale = JSON.parse(data);
+  console.log(dataFinale);
+  //con questo metodo utilizzo l index php per passare il database php, poi sfrutto
+  //gli attr di jquery. E' un altro modo per far dialogare php e js.
 
 
   //grafico
@@ -20,7 +22,7 @@ $(document).ready(function() {
               label: "My First dataset",
               backgroundColor: 'rgb(180, 139, 119)',
               borderColor: 'rgb(53, 72, 154)',
-              data: ,
+              data: dataFinale,
           }]
       },
 

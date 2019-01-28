@@ -19,9 +19,9 @@ $(document).ready(function() {
         data: {
           labels: mesi,
           datasets: [{
-            label: "My First dataset",
-            backgroundColor: 'rgb(180, 139, 119)',
-            borderColor: 'rgb(53, 72, 154)',
+            label: "Vendite annuali",
+            backgroundColor: 'rgb(53, 72, 154, .3)',
+            borderColor: 'rgb(53, 72, 154, .8)',
             data: my_data,
           }]
         },

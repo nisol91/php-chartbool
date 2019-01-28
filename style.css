@@ -7,11 +7,14 @@
 .container {
   background: lightgrey;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .grafico {
-  width: 70%;
+  width: 80%;
+}
+.dati_php {
+  display: none;
 }

@@ -1,6 +1,9 @@
 
 $(document).ready(function() {
   var data = $('.line-chart').attr('data-database');
+  // oppure
+  // var data = $('.line-chart').data('database'); scrivo solo quello che c e dopo il trattino se uso data
+
   console.log(data);
   var dataFinale = JSON.parse(data);
   console.log(dataFinale);

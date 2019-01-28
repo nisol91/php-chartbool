@@ -24,10 +24,10 @@
 
     <script type="text/javascript">
     <?php include 'data.php'; ?>
-    var database = [1000,1322,1123,2301,3288,988,502,2300,5332,2300,1233,2322];
+    // var database = [1000,1322,1123,2301,3288,988,502,2300,5332,2300,1233,2322];
+    // console.log(database);
     var dataPhp = "<?php echo $dataset; ?>";
     var dataFinale = JSON.parse(dataPhp);
-    console.log(database);
     console.log(dataFinale);
     //NOTA: con questo metodo evito la chiamata AJAX. In pratica metto uno script javascript direttamente nell index.php, cosi posso scrivere il php dentro al javascript. Unico accorgimento e' mettere gli apici "" ai dati provenienti da php per poter essere parsati correttamente. Di solito e' la chiamata ajax che restituisce una stringa. Ma qui non essendoci e' sempre meglio dirgli che tutti i dati che devono essere parsati (provenienti dal db php), siano una stringa. E' un metodo per far dialogare php e js.
 

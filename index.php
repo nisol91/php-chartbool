@@ -18,23 +18,40 @@
     <div class="dati_php">
       <?php include 'data.php'; ?>
       <?php include 'server_2.php'; ?>
-
+      <?php include 'server_3.php'; ?>
       <!-- se lo metto qua e' un div nascosto quindi non si vedono i dati, oppure lo metto fuori dal body e lo legge il lettore di JSON. -->
     </div>
     <div class="container">
-      <div class="grafico">
-        <canvas class="line-chart"></canvas>
+      <div class="m_1">
+        <div class="grafico">
+          <canvas class="line-chart"></canvas>
+        </div>
       </div>
-      <div class="grafico">
-        <canvas class="line-chart-ii"></canvas>
+      <div class="m_2">
+        <div class="grafico">
+          <canvas class="line-chart-ii"></canvas>
+        </div>
+        <div class="grafico_torta">
+          <canvas class="pie-chart"></canvas>
+        </div>
       </div>
-      <div class="grafico_torta">
-        <canvas class="pie-chart"></canvas>
+      <div class="m_3">
+        <div class="grafico">
+          <canvas class="line-chart-iii"></canvas>
+        </div>
+        <div class="grafico_torta">
+          <canvas class="pie-chart-iii"></canvas>
+        </div>
+        <div class="grafico">
+          <canvas class="line-chart-iiii"></canvas>
+        </div>
       </div>
     </div>
 
     <script src="script.js"></script>
     <script src="script_2.js"></script>
+    <script src="script_3.js"></script>
+
 
 
   </body>

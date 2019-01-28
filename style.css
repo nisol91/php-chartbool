@@ -6,17 +6,22 @@
 }
 .container {
   background: lightgrey;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: auto;
 }
 .grafico {
-  width: 80%;
+  width: 30%;
 }
 .grafico_torta {
-  width: 50%;
+  width: 20%;
+}
+.m_1, .m_2, .m_3 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  border: .5px solid grey;
+
 }
 .dati_php {
   display: none;

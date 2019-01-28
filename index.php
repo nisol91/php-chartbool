@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="style.css">
     <title></title>
   </head>
-  <?php include 'server_2.php'; ?>
   <body>
     <div class="dati_php">
       <?php include 'data.php'; ?>
+      <?php include 'server_2.php'; ?>
 
       <!-- se lo metto qua e' un div nascosto quindi non si vedono i dati, oppure lo metto fuori dal body e lo legge il lettore di JSON. -->
     </div>

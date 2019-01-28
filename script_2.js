@@ -6,6 +6,8 @@ $(document).ready(function() {
     url: 'http://localhost/advanced_charts/server_2.php',
     method: 'GET',
     success: function (data) {
+
+      //rendo i dati leggibili da js
       var my_data = JSON.parse(data);
       console.log(my_data);
 
@@ -13,6 +15,8 @@ $(document).ready(function() {
       console.log(my_data['fatturato']['data']);
       console.log(my_data['fatturato']['type']);
 
+
+      //preparo i dati che arrivano dal DB per poter essere letti da chart.js
       var venditeAgenti = my_data['fatturato_by_agent']['data'];
       var valoriVenditeAgenti = [];
       var agenti = [];
@@ -25,7 +29,12 @@ $(document).ready(function() {
       }
       console.log(valoriVenditeAgenti);
 
-      //grafico a linee
+    //************************
+    //*******GRAFICI**********
+    //************************
+
+
+      //grafico a linee********
       var mesi = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
       var ctx_ii = $('.line-chart-ii');
       var ctx_iii = $('.pie-chart');
@@ -52,7 +61,7 @@ $(document).ready(function() {
 
 
 
-      //grafico a torta
+      //grafico a torta*********
       var chart_pie = new Chart(ctx_iii, {
         // The type of chart we want to create
         type: my_data['fatturato_by_agent']['type'],

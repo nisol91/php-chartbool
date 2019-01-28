@@ -34,28 +34,17 @@ $(document).ready(function() {
 
 
       //controllo per la visualizzazione dei GRAFICI
-      $.ajax({
-        url: 'http://localhost/advanced_charts/query_access.php',
-        method: 'GET',
-        success: function (data) {
-          var my_query = JSON.parse(data);
-          console.log(my_query);
+      //NB: non posso usare una chiamata ajax perche poi sarebbe lei stessa a governare le query, ma noi vogliamo prendere i valori in GET con php
 
-          // for (var key in my_data) {
-          //   if (my_query = 'guest') {
-          //     $('.vis_2').addClass('.nascosto');
-          //     $('.vis_3').addClass('.nascosto');
-          //   } else if (my_query === 'employee') {
-          //     $('.vis_3').addClass('.nascosto');
-          //   } else if (my_query === 'clevel') {
-          //
-          //   }
-          // }
+        var my_query = window.location.search.substring(7);
+        console.log(my_query);
 
-        }
-      });
-
-
+            if (my_query === 'guest') {
+              $('.vis_2').addClass('nascosto');
+              $('.vis_3').addClass('nascosto');
+            } else if (my_query === 'employee') {
+              $('.vis_3').addClass('nascosto');
+            } 
 
 
     //************************

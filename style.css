@@ -7,13 +7,16 @@
 .container {
   background: lightgrey;
   width: 100vw;
-  height: auto;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .grafico {
   width: 80%;
+}
+.grafico_torta {
+  width: 50%;
 }
 .dati_php {
   display: none;

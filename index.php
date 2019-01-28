@@ -14,17 +14,28 @@
     <link rel="stylesheet" href="style.css">
     <title></title>
   </head>
+  <?php include 'server_2.php'; ?>
   <body>
     <div class="dati_php">
       <?php include 'data.php'; ?>
+
       <!-- se lo metto qua e' un div nascosto quindi non si vedono i dati, oppure lo metto fuori dal body e lo legge il lettore di JSON. -->
     </div>
     <div class="container">
       <div class="grafico">
         <canvas class="line-chart"></canvas>
       </div>
+      <div class="grafico">
+        <canvas class="line-chart-ii"></canvas>
+      </div>
+      <div class="grafico_torta">
+        <canvas class="pie-chart"></canvas>
+      </div>
     </div>
 
     <script src="script.js"></script>
+    <script src="script_2.js"></script>
+
+
   </body>
 </html>

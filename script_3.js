@@ -32,6 +32,32 @@ $(document).ready(function() {
       //preparo i dati (milestone 3)
       console.log(my_data['team_efficiency']['data']);
 
+
+      //controllo per la visualizzazione dei GRAFICI
+      $.ajax({
+        url: 'http://localhost/advanced_charts/query_access.php',
+        method: 'GET',
+        success: function (data) {
+          var my_query = JSON.parse(data);
+          console.log(my_query);
+
+          // for (var key in my_data) {
+          //   if (my_query = 'guest') {
+          //     $('.vis_2').addClass('.nascosto');
+          //     $('.vis_3').addClass('.nascosto');
+          //   } else if (my_query === 'employee') {
+          //     $('.vis_3').addClass('.nascosto');
+          //   } else if (my_query === 'clevel') {
+          //
+          //   }
+          // }
+
+        }
+      });
+
+
+
+
     //************************
     //*******GRAFICI**********
     //************************

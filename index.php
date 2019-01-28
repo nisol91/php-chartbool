@@ -14,11 +14,13 @@
     <link rel="stylesheet" href="style.css">
     <title></title>
   </head>
+  <?php include 'query_access.php'; ?>
   <body>
     <div class="dati_php">
       <?php include 'data.php'; ?>
       <?php include 'server_2.php'; ?>
       <?php include 'server_3.php'; ?>
+
       <!-- se lo metto qua e' un div nascosto quindi non si vedono i dati, oppure lo metto fuori dal body e lo legge il lettore di JSON. -->
     </div>
     <div class="container">
@@ -36,13 +38,13 @@
         </div>
       </div>
       <div class="m_3">
-        <div class="grafico">
+        <div class="grafico vis_1">
           <canvas class="line-chart-iii"></canvas>
         </div>
-        <div class="grafico_torta">
+        <div class="grafico_torta vis_2">
           <canvas class="pie-chart-iii"></canvas>
         </div>
-        <div class="grafico">
+        <div class="grafico vis_3">
           <canvas class="line-chart-iiii"></canvas>
         </div>
       </div>

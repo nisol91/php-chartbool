@@ -2,10 +2,6 @@
 $(document).ready(function() {
 
 
-
-  
-
-
   $.ajax({
     url: 'http://localhost/advanced_charts/milestone_3/server_3.php',
     method: 'GET',
@@ -20,124 +16,43 @@ $(document).ready(function() {
       console.log(my_data['fatturato']['type']);
 
 
-      //preparo i dati (milestone 2) che arrivano dal DB per poter essere letti da chart.js
+      //****preparo i dati (milestone 2) che arrivano dal DB per poter essere letti da chart.js
       //volendo questa parte si poteva fare in php, ma non cambia niente.
       var venditeAgenti = my_data['fatturato_by_agent']['data'];
-      var valoriVenditeAgenti = [];
-      var agenti = [];
-      console.log(my_data['fatturato_by_agent']['data']);
-      for (var variable in venditeAgenti) {
-        valoriVenditeAgenti.push(venditeAgenti[variable]);
-        agenti.push(variable);
 
-        console.log(venditeAgenti[variable]);
-      }
-      console.log(valoriVenditeAgenti);
-
-      //preparo i dati (milestone 3)
-      console.log(my_data['team_efficiency']['data']);
+      var agenti = dataSort(venditeAgenti).agents;
+      var valoriVenditeAgenti = dataSort(venditeAgenti).agentsValues;
 
 
-      //controllo per la visualizzazione dei GRAFICI
+      //****controllo per la visualizzazione dei GRAFICI
+      queryString();
 
-      //NB: non posso usare una chiamata ajax perche poi sarebbe lei stessa a governare le query, ma noi vogliamo prendere i valori in GET con php
+      //*******************************
+      //*******STAMPA GRAFICI**********
+      //*******************************
 
-        var my_query = window.location.search.substring(7);
-        console.log(my_query);
-
-        if (my_query === 'guest') {
-          $('.vis_2').addClass('nascosto');
-          $('.vis_3').addClass('nascosto');
-        } else if (my_query === 'employee') {
-          $('.vis_3').addClass('nascosto');
-        }
-
-
-    //************************
-    //*******GRAFICI**********
-    //************************
-
-
-      //grafico a linee********
       var mesi = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
       var ctx_ii = $('.line-chart-iii');
       var ctx_iii = $('.pie-chart-iii');
       var ctx_iiii = $('.line-chart-iiii');
 
 
+      var ord_1 = my_data['fatturato']['data'];
+      var titolo_1 = "Vendite annuali, Milestone III";
+      var tipo_1 = my_data['fatturato']['type'];
 
-      var chart = new Chart(ctx_ii, {
-        // The type of chart we want to create
-        type: my_data['fatturato']['type'],
+      var tipo_2 = my_data['fatturato_by_agent']['type'];
 
-        // The data for our dataset
-        data: {
-          labels: mesi,
-          datasets: [{
-            label: "Vendite annuali, Milestone III",
-            backgroundColor: 'rgb(82, 39, 46, .3)',
-            borderColor: 'rgb(82, 39, 46)',
-            data: my_data['fatturato']['data'],
-          }]
-        },
+      var ord_3_a = my_data['team_efficiency']['data']['Team1'];
+      var ord_3_b = my_data['team_efficiency']['data']['Team2'];
+      var ord_3_c = my_data['team_efficiency']['data']['Team3'];
+      var titolo_3_a = "Efficienza Team1, Milestone III";
+      var titolo_3_b = "Efficienza Team2, Milestone III";
+      var titolo_3_c = "Efficienza Team3, Milestone III";
 
-        // Configuration options go here
-        options: {}
-      });
-
-
-
-      //grafico a torta*********
-      var chart_pie = new Chart(ctx_iii, {
-        // The type of chart we want to create
-        type: my_data['fatturato_by_agent']['type'],
-
-        // The data for our dataset
-        data: {
-          labels: agenti,
-          datasets: [{
-            backgroundColor: ['lightblue', 'rgb(38, 109, 111)', 'rgb(93, 115, 164)', 'rgb(136, 154, 185)'],
-            borderColor: ['grey', 'grey', 'grey', 'grey'],
-            data: valoriVenditeAgenti,
-          }]
-        },
-
-        // Configuration options go here
-        options: {}
-      });
-
-      //grafico a linee_efficiency********
-      var chart_ii = new Chart(ctx_iiii, {
-        // The type of chart we want to create
-        type: my_data['fatturato']['type'],
-
-        // The data for our dataset
-        data: {
-          labels: mesi,
-          datasets: [{
-            label: "Efficienza Team1, Milestone III",
-            backgroundColor: 'rgb(82, 39, 46, .3)',
-            borderColor: 'rgb(82, 39, 46)',
-            data: my_data['team_efficiency']['data']['Team1'],
-          },
-          {
-            label: "Efficienza Team2, Milestone III",
-            backgroundColor: 'rgb(93, 115, 164, .3)',
-            borderColor: 'rgb(93, 115, 164)',
-            data: my_data['team_efficiency']['data']['Team2'],
-          },
-          {
-            label: "Efficienza Team3, Milestone III",
-            backgroundColor: 'rgb(176, 110, 82, .3)',
-            borderColor: 'rgb(176, 110, 82)',
-            data: my_data['team_efficiency']['data']['Team3'],
-          },
-        ]
-        },
-
-        // Configuration options go here
-        options: {}
-      });
+      printLineChart(mesi, ord_1, titolo_1, ctx_ii, tipo_1);
+      printPieChart(agenti, valoriVenditeAgenti, ctx_iii, tipo_2);
+      printMultiLineChart(mesi, ord_3_a, ord_3_b, ord_3_c, titolo_3_a, titolo_3_b, titolo_3_c, ctx_iiii, tipo_1);
 
     },
   });

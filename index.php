@@ -55,8 +55,5 @@
     <script src="milestone_3/functions.js"></script>
     <script src="milestone_3/script_3.js"></script>
 
-
-
-
   </body>
 </html>

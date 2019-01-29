@@ -2,8 +2,12 @@
 $(document).ready(function() {
 
 
+
+  
+
+
   $.ajax({
-    url: 'http://localhost/advanced_charts/server_3.php',
+    url: 'http://localhost/advanced_charts/milestone_3/server_3.php',
     method: 'GET',
     success: function (data) {
 
@@ -17,6 +21,7 @@ $(document).ready(function() {
 
 
       //preparo i dati (milestone 2) che arrivano dal DB per poter essere letti da chart.js
+      //volendo questa parte si poteva fare in php, ma non cambia niente.
       var venditeAgenti = my_data['fatturato_by_agent']['data'];
       var valoriVenditeAgenti = [];
       var agenti = [];
@@ -34,17 +39,18 @@ $(document).ready(function() {
 
 
       //controllo per la visualizzazione dei GRAFICI
+
       //NB: non posso usare una chiamata ajax perche poi sarebbe lei stessa a governare le query, ma noi vogliamo prendere i valori in GET con php
 
         var my_query = window.location.search.substring(7);
         console.log(my_query);
 
-            if (my_query === 'guest') {
-              $('.vis_2').addClass('nascosto');
-              $('.vis_3').addClass('nascosto');
-            } else if (my_query === 'employee') {
-              $('.vis_3').addClass('nascosto');
-            } 
+        if (my_query === 'guest') {
+          $('.vis_2').addClass('nascosto');
+          $('.vis_3').addClass('nascosto');
+        } else if (my_query === 'employee') {
+          $('.vis_3').addClass('nascosto');
+        }
 
 
     //************************

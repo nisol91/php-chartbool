@@ -16,10 +16,10 @@
   </head>
   <body>
     <div class="dati_php">
-      <?php include 'data.php'; ?>
-      <?php include 'server_2.php'; ?>
-      <?php include 'server_3.php'; ?>
-      <?php include 'query_access.php'; ?>
+      <?php include 'milestone_1/data.php'; ?>
+      <?php include 'milestone_2/server_2.php'; ?>
+      <?php include 'milestone_3/server_3.php'; ?>
+      <?php include 'milestone_3/query_access.php'; ?>
 
       <!-- se lo metto qua e' un div nascosto quindi non si vedono i dati, oppure lo metto fuori dal body e lo legge il lettore di JSON. -->
     </div>
@@ -50,9 +50,11 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
-    <script src="script_2.js"></script>
-    <script src="script_3.js"></script>
+    <script src="milestone_1/script.js"></script>
+    <script src="milestone_2/script_2.js"></script>
+    <script src="milestone_3/functions.js"></script>
+    <script src="milestone_3/script_3.js"></script>
+
 
 
 

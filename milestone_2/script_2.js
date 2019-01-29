@@ -3,7 +3,7 @@ $(document).ready(function() {
 
 
   $.ajax({
-    url: 'http://localhost/advanced_charts/server_2.php',
+    url: 'http://localhost/advanced_charts/milestone_2/server_2.php',
     method: 'GET',
     success: function (data) {
 

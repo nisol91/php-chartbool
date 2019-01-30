@@ -31,7 +31,7 @@ $(document).ready(function() {
       //*******STAMPA GRAFICI**********
       //*******************************
 
-      var mesi = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+      var mesi = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       var ctx_ii = $('.line-chart-iii');
       var ctx_iii = $('.pie-chart-iii');
       var ctx_iiii = $('.line-chart-iiii');

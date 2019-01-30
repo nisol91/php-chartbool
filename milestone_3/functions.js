@@ -50,7 +50,7 @@ function printPieChart(ascissa, ordinata, posizione, tipo) {
 
 };
 
-//#### colori casuali per il multi line graphic
+//#### colori casuali per il multi line graphic e il pie graphic
 //in ingresso prende l opacita' (intero tra 1 e 9) e il range di colore, per generare casualmente colori simili.
 
 

@@ -1,0 +1,8 @@
+node_modules
+mix-manifest.json
+package-lock.json
+package.json
+webpack.mix.js
+bootstrap-4.2.1
+_bootstrap_functions
+_bootstrap_variables

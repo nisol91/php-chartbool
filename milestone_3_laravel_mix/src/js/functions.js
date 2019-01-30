@@ -1,3 +1,8 @@
+// var $ = require('jquery');
+
+
+$(document).ready(function() {
+
 //####stampo grafico a linea
 
 
@@ -98,31 +103,16 @@ function queryString() {
 
   //****controllo per la visualizzazione dei GRAFICI
 
-  //NB: non posso usare una chiamata ajax perche poi sarebbe lei stessa a governare le query.
-  //uso window.location per prendere dalla url il valore della query.
+  //NB: non posso usare una chiamata ajax perche poi sarebbe lei stessa a governare le query, ma noi vogliamo prendere i valori in GET con php
 
     var my_query = window.location.search.substring(7);
     console.log(my_query);
 
     if (my_query === 'guest') {
-      $('.m_3').children('.vis').each(function(index) {
-        console.log($(this));
-        var chiave = $(this).attr('id');
-        console.log(chiave);
-        if (chiave != my_query) {
-          $(this).hide();
-        }
-      });
-
+      $('.vis_2').addClass('nascosto');
+      $('.vis_3').addClass('nascosto');
     } else if (my_query === 'employee') {
-      $('.m_3').children('.vis').each(function(index) {
-        console.log($(this));
-        var chiave = $(this).attr('id');
-        console.log(chiave);
-        if (chiave != my_query && chiave != 'guest') {
-          $(this).hide();
-        }
-      });
+      $('.vis_3').addClass('nascosto');
     }
 }
 
@@ -144,3 +134,6 @@ function dataSort(data) {
   }
 
 }
+
+
+});

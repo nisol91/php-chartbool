@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+.container {
+  background: lightgrey;
+  width: 100%;
+  height: auto;
+}
+
+.grafico {
+  width: 30%;
+}
+
+.grafico_torta {
+  width: 20%;
+}
+
+.m_1,
+.m_2,
+.m_3 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  border: 0.5px solid grey;
+}
+
+.dati_php {
+  display: none;
+}
+
+.nascosto {
+  display: none;
+}
+

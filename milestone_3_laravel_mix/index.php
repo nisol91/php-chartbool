@@ -11,14 +11,13 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title></title>
   </head>
   <body>
     <div class="dati_php">
-      <?php include 'milestone_1/data.php'; ?>
-      <?php include 'milestone_2/server_2.php'; ?>
-      <?php include 'milestone_3/server_3.php'; ?>
+      <?php include 'php/server_3.php'; ?>
+      <?php include 'php/query_access.php'; ?>
 
       <!-- se lo metto qua e' un div nascosto quindi non si vedono i dati, oppure lo metto fuori dal body e lo legge il lettore di JSON. -->
     </div>
@@ -37,22 +36,23 @@
         </div>
       </div>
       <div class="m_3">
-        <div class="vis grafico" id = "<?php echo $access_fatturato; ?>">
+        <div class="grafico vis_1">
           <canvas class="line-chart-iii"></canvas>
         </div>
-        <div class="vis grafico_torta" id = "<?php echo $access_fatturato_agent; ?>">
+        <div class="grafico_torta vis_2">
           <canvas class="pie-chart-iii"></canvas>
         </div>
-        <div class="vis grafico" id = "<?php echo $access_efficienza; ?>">
+        <div class="grafico vis_3">
           <canvas class="line-chart-iiii"></canvas>
         </div>
       </div>
     </div>
 
-    <script src="milestone_1/script.js"></script>
-    <script src="milestone_2/script_2.js"></script>
-    <script src="milestone_3/functions.js"></script>
-    <script src="milestone_3/script_3.js"></script>
+    <script src="js/app_functions.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- <script src="src/js/functions.js"></script>
+    <script src="src/js/script_3.js"></script> -->
 
   </body>
 </html>

@@ -38,7 +38,7 @@ function printPieChart(ascissa, ordinata, posizione, tipo) {
     data: {
       labels: ascissa,
       datasets: [{
-        backgroundColor: ['lightblue', 'rgb(38, 109, 111)', 'rgb(93, 115, 164)', 'rgb(136, 154, 185)'],
+        backgroundColor: [getColor(3, 0, 100), getColor(3, 0, 100), getColor(3, 0, 100), getColor(3, 0, 100)],
         borderColor: ['grey', 'grey', 'grey', 'grey'],
         data: ordinata,
       }]
@@ -49,6 +49,38 @@ function printPieChart(ascissa, ordinata, posizione, tipo) {
   });
 
 };
+
+//#### colori casuali per il multi line graphic
+//in ingresso prende l opacita' (intero tra 1 e 9) e il range di colore, per generare casualmente colori simili.
+
+
+function random_int_number(min, max) {
+  return Math.floor(Math.random() * (max - min +  1) + min);
+}
+
+
+
+function getColor(opacity, range_min, range_max) {
+
+  var colors = [];
+
+  //impedisco che un colore possa comparire 2 volte.
+  var i = 0;
+  while (i < 3) {
+    var num = random_int_number(range_min, range_max);
+    console.log(num);
+    if (!colors.includes(num)) {
+      colors.push(num);
+      console.log(num);
+      i++;
+    }
+  }
+
+  console.log(colors);
+  var finalColor = 'rgb(' + colors[0] + ', ' + colors[1] + ', ' + colors[2] + ', .' + opacity + ')';
+  console.log(finalColor);
+  return finalColor
+}
 
 
 
@@ -65,20 +97,20 @@ function printMultiLineChart(ascissa, ordinata1, ordinata2, ordinata3, titolo1, 
       labels: ascissa,
       datasets: [{
         label: titolo1,
-        backgroundColor: 'rgb(82, 39, 46, .3)',
-        borderColor: 'rgb(82, 39, 46)',
+        backgroundColor: getColor(2, 0, 80),
+        borderColor: getColor(8, 0, 80),
         data: ordinata1,
       },
       {
         label: titolo2,
-        backgroundColor: 'rgb(93, 115, 164, .3)',
-        borderColor: 'rgb(93, 115, 164)',
+        backgroundColor: getColor(2, 0, 80),
+        borderColor: getColor(8, 0, 80),
         data: ordinata2,
       },
       {
         label: titolo3,
-        backgroundColor: 'rgb(176, 110, 82, .3)',
-        borderColor: 'rgb(176, 110, 82)',
+        backgroundColor: getColor(2, 0, 80),
+        borderColor: getColor(8, 0, 80),
         data: ordinata3,
       },
     ]

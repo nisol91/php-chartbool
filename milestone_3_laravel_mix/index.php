@@ -50,8 +50,6 @@
 
     <script src="js/app.js"></script>
 
-    <!-- <script src="src/js/functions.js"></script>
-    <script src="src/js/script_3.js"></script> -->
 
   </body>
 </html>
